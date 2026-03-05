@@ -1,36 +1,155 @@
 # go-server-template
 
-GoAPILib を使って Minecraft プラグインを Go で書くためのテンプレートです。
+> [!WARNING]
+> - English: **GoAPI and GoLoader (goloder) are not public yet.**
+> - 日本語: **GoAPI と GoLoader（goloder）はまだ公開していません。**
+> - 한국어: **GoAPI와 GoLoader(goloder)는 아직 공개되지 않았습니다.**
+> - 中文: **GoAPI 和 GoLoader（goloder）目前尚未公开。**
 
-## セットアップ
+Template for writing Minecraft plugin logic in Go.
 
-1. このリポジトリを「Use this template」でコピーする
-2. `modules/example/` を参考に自分のモジュールを作る
-3. `main.go` にモジュールを登録する
-4. ビルドする
+## Languages
 
-## ビルド
+- [English](#english)
+- [日本語](#日本語)
+- [한국어](#한국어)
+- [中文](#中文)
+
+## Human Docs
+
+- [Human Guide (English)](docs/HUMAN_AGENT_GUIDE.en.md)
+- [Human Guide (日本語)](docs/HUMAN_AGENT_GUIDE.ja.md)
+- [Human Guide (한국어)](docs/HUMAN_AGENT_GUIDE.ko.md)
+- [Human Guide (中文)](docs/HUMAN_AGENT_GUIDE.zh-CN.md)
+
+## English
+
+Template repository for building a Go-based server module that runs behind the GoAPI/GoLoader bridge.
+
+### Setup
+
+1. Click `Use this template` to create your own repository.
+2. Create your module by following `modules/example/`.
+3. Add your module registration line in `main.go`.
+4. Build the binary.
+
+### Build
 
 ```bash
 go build -o server .
-# -> server バイナリを plugins/GoLoader/server に配置
+# Place the "server" binary at plugins/GoLoader/server
 ```
 
-## モジュールの追加
+### Add a module
 
-```
+```text
 modules/
 └── myfeature/
-    ├── register.go   <- goapi.On / goapi.Command をここに書く
-    └── *.go          <- ハンドラ実装
+    ├── register.go   <- write goapi.On / goapi.Command registrations
+    └── *.go          <- handler implementations
 ```
 
-main.go に1行追加:
+Add one line in `main.go`:
+
 ```go
 myfeature.Register()
 ```
 
-## API リファレンス
+## 日本語
 
-- [goapi-sdk](https://github.com/mituba4154/goapi-sdk)
-- [GoAPILib (Java)](https://github.com/mituba4154/GoAPI)
+GoAPI/GoLoader ブリッジ上で動く Go 製サーバーモジュールのテンプレートです。
+
+### セットアップ
+
+1. `Use this template` でこのテンプレートを複製する
+2. `modules/example/` を参考にモジュールを作成する
+3. `main.go` にモジュール登録を1行追加する
+4. バイナリをビルドする
+
+### ビルド
+
+```bash
+go build -o server .
+# "server" バイナリを plugins/GoLoader/server に配置
+```
+
+### モジュール追加
+
+```text
+modules/
+└── myfeature/
+    ├── register.go   <- goapi.On / goapi.Command の登録を書く
+    └── *.go          <- ハンドラ実装
+```
+
+`main.go` に1行追加:
+
+```go
+myfeature.Register()
+```
+
+## 한국어
+
+GoAPI/GoLoader 브리지 뒤에서 동작하는 Go 서버 모듈 템플릿입니다.
+
+### 설정
+
+1. `Use this template`로 저장소를 복제합니다.
+2. `modules/example/`를 참고해 새 모듈을 만듭니다.
+3. `main.go`에 모듈 등록 한 줄을 추가합니다.
+4. 바이너리를 빌드합니다.
+
+### 빌드
+
+```bash
+go build -o server .
+# "server" 바이너리를 plugins/GoLoader/server 에 배치
+```
+
+### 모듈 추가
+
+```text
+modules/
+└── myfeature/
+    ├── register.go   <- goapi.On / goapi.Command 등록 작성
+    └── *.go          <- 핸들러 구현
+```
+
+`main.go`에 한 줄 추가:
+
+```go
+myfeature.Register()
+```
+
+## 中文
+
+这是一个用于编写 Go 服务器模块的模板，运行方式是通过 GoAPI/GoLoader 桥接。
+
+### 初始化
+
+1. 使用 `Use this template` 复制本仓库
+2. 参考 `modules/example/` 创建自己的模块
+3. 在 `main.go` 中添加模块注册代码
+4. 构建二进制文件
+
+### 构建
+
+```bash
+go build -o server .
+# 将 "server" 二进制放到 plugins/GoLoader/server
+```
+
+### 添加模块
+
+```text
+modules/
+└── myfeature/
+    ├── register.go   <- 编写 goapi.On / goapi.Command 注册
+    └── *.go          <- 处理逻辑实现
+```
+
+在 `main.go` 添加一行：
+
+```go
+myfeature.Register()
+```
