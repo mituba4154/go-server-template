@@ -1,10 +1,6 @@
 # go-server-template
 
-> [!WARNING]
-> - English: **GoAPI and GoLoader (goloder) are not public yet.**
-> - 日本語: **GoAPI と GoLoader（goloder）はまだ公開していません。**
-> - 한국어: **GoAPI와 GoLoader(goloder)는 아직 공개되지 않았습니다.**
-> - 中文: **GoAPI 和 GoLoader（goloder）目前尚未公开。**
+
 
 Template for writing Minecraft plugin logic in Go.
 
